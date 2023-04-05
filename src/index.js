@@ -2,8 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { initialize} from './middleware/auth.js';
-import messageRouter from "./routers/MessageRouter.js";
-import { studentRouter } from './routers/StudentsRoutes.js';
+// import SaveCourseRouter from "./routers/MessageRouter.js";
+// import { CourseRouter } from './routers/StudentsRoutes.js';
 import { userRouter } from './routers/UserRouter.js';
 const app = express();
 dotenv.config();
@@ -13,8 +13,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(initialize());
-app.use('/api/message', messageRouter);
-app.use('/api/students', studentRouter);
+// app.use('/api/savecourse', SaveCourseRouter);
+// app.use('/api/course', CourseRouter);
 app.use('/api/user', userRouter);
 
 

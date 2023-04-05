@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     lastName: {
       allowNull: false, type:DataTypes.STRING
     },
-    secondName: DataTypes.STRING,
+    middleName: DataTypes.STRING,
     email: {
       type:DataTypes.STRING,
       unique:true,
