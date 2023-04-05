@@ -81,7 +81,7 @@ class CourseController {
     const { id } = req.params;
 
     if (!id) {
-      util.setError(400, 'Please provide a valid UUID');
+      util.setError(400, 'Please provide a valid id');
       return util.send(res);
     }
 
