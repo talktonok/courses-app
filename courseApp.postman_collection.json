@@ -1,0 +1,351 @@
+{
+	"info": {
+		"_postman_id": "5fdcb117-c838-480f-b708-91a5d29e1bb6",
+		"name": "courseApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17760600"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Mansur\", \r\n    \"lastName\": \"Ibrahim\", \r\n    \"middleName\": \"Nok\", \r\n    \"email\": \"nok@gmailf.com\", \r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nok@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Add course",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Laravel for beginners\",\r\n    \"code\": \"LV4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update course",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"LV23\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/course/ac2042c4-4256-4207-bd33-110613483c7a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"course",
+								"ac2042c4-4256-4207-bd33-110613483c7a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/course/71dbeae6-623d-4dec-a519-9dbfcb281c83",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"course",
+								"71dbeae6-623d-4dec-a519-9dbfcb281c83"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete A Course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/course/71dbeae6-623d-4dec-a519-9dbfcb281c83",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"course",
+								"71dbeae6-623d-4dec-a519-9dbfcb281c83"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Saved Courses",
+			"item": [
+				{
+					"name": "Get all Saved Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/savecourse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"savecourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add saved courses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"41e25b45-f20f-40f9-961e-64e8414caa0c\",\r\n    \"userId\": \"f489412e-2e94-4bea-9c10-a82b00e2aba5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/savecourse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"savecourse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Course List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/savecourse/f489412e-2e94-4bea-9c10-a82b00e2aba5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"savecourse",
+								"f489412e-2e94-4bea-9c10-a82b00e2aba5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update  Course list",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseId\": \"41e25b45-f20f-40f9-961e-64e8414caa0c\",\r\n    \"userId\": \"f489412e-2e94-4bea-9c10-a82b00e2aba5\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/savecourse/f489412e-2e94-4bea-9c10-a82b00e2aba5/41e25b45-f20f-40f9-961e-64e8414caa0c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"savecourse",
+								"f489412e-2e94-4bea-9c10-a82b00e2aba5",
+								"41e25b45-f20f-40f9-961e-64e8414caa0c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/savecourse/f489412e-2e94-4bea-9c10-a82b00e2aba5/41e25b45-f20f-40f9-961e-64e8414caa0c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"savecourse",
+								"f489412e-2e94-4bea-9c10-a82b00e2aba5",
+								"41e25b45-f20f-40f9-961e-64e8414caa0c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a course",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/savecourse/f489412e-2e94-4bea-9c10-a82b00e2aba5/41e25b45-f20f-40f9-961e-64e8414caa0c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"savecourse",
+								"f489412e-2e94-4bea-9c10-a82b00e2aba5",
+								"41e25b45-f20f-40f9-961e-64e8414caa0c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
