@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
 
-      SavedCourse.belongsTo(models.Course, {foreignKey:'courseId', as: 'course'});
-      SavedCourse.belongsTo(models.User, {foreignKey: 'userId', as: 'user'});
+      // SavedCourse.hasMany(models.Course, {foreignKey:'courseId', as: 'Course'});
+      // SavedCourse.hasMany(models.User, {foreignKey: 'userId', as: 'user'});
     }
   }
   SavedCourse.init({

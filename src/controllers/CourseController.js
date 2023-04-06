@@ -1,3 +1,4 @@
+const morx = require('morx');
 import CourseService from '../services/CourseService.js';
 import Util from '../utils/Utils.js';
 
@@ -21,8 +22,13 @@ class CourseController {
   }
 
   static async addCourse(req, res) {
-    
-    const newCourse = req.body;
+    const spec = morx.spec()
+.build('title', 'required:true, eg:Lavele for beginners')
+.build('code', 'required:true, eg:LV100')
+.end();
+
+const validated = morx.validate(req.body, spec);
+            const newCourse = validated.params;
     try {
       const course = await CourseService.addCourse(newCourse);
       util.setSuccess(201, 'Course Added Successfully!', course);
@@ -34,22 +40,25 @@ class CourseController {
   }
 
   static async updateCourse(req, res) {
-    const alteredCourse = req.body;
+    const spec = morx.spec()
+.build('title', 'required:true, eg:Lavele for beginners')
+.build('code', 'required:true, eg:LV100')
+.end();
+
+const validated = morx.validate(req.body, spec);
+            const alteredCourse = validated.params;
     const { id } = req.params;
-    if (!id) {
-      util.setError(400, 'Please input a valid UUID');
-      return util.send(res);
-    }
+
     try {
       const course = await CourseService.updateCourse(id, alteredCourse);
       if (!course) {
         util.setError(404, `Cannot find a Course with the id: ${id}`);
       } else {
-        util.setSuccess(200, 'Course updated with the following details', course);
+        util.setSuccess(200, 'Course updated Successfully', course);
       }
       return util.send(res);
     } catch (error) {
-      util.setError(404, error.message);
+      util.setError(400, error.message);
       return util.send(res);
     }
   }
@@ -72,7 +81,7 @@ class CourseController {
       }
       return util.send(res);
     } catch (error) {
-      util.setError(404, error.message);
+      util.setError(400, error.message);
       return util.send(res);
     }
   }

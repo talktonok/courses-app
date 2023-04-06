@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       // Course.belongsTo(models.User, {foreignKey: 'userId', as:   'user'});
       // Course.belongsTo(models.Class, {foreignKey: 'classId', as:   'class'});
+      // Course.hasMany(models.SavedCourse, {foreignKey: 'courseId', as: 'Course'})
+      Course.belongsToMany(models.User, {through: 'SavedCourse', foreignKey: 'courseId', as: 'SavedCourses',});
     }
   }
   Course.init({

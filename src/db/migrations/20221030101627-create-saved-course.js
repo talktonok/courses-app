@@ -10,8 +10,9 @@ module.exports = {
         defaultValue: Sequelize.UUIDV4
       },
       courseId: {
-        type:Sequelize.STRING,
-        allowNull:false
+        type: Sequelize.UUID,
+        allowNull:false,
+        foreignKey:true
       },
       userId: {
         type: Sequelize.UUID,
@@ -29,6 +30,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('AssignmentScores');
+    await queryInterface.dropTable('SavedCourses');
   }
 };
