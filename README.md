@@ -1,4 +1,4 @@
-# Class Manager
+# Course App
 
 ### The technologies used in creating this project are:
 Node.js, ExpressJs, Sequelize ORM, and PostgreSQL
