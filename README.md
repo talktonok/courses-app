@@ -10,10 +10,12 @@ Node.js, ExpressJs, Sequelize ORM, and PostgreSQL
 - cd into the project and run `npm install`
 - create a `.env` file in the root folder and copy the content in the `.env.example`into it.
 - create a `config.js` file in the root folder and copy the content in the `config.example.js`into it.
+- Import the `courseApp.postman_collection.json` found in the root folder to postman to have access to the postman.
 - run `npm run migrate` to migrate to the database.
 - run `npm run migrate:undo` to undo migration.
 - run `npm run seed` to seed the database.
 - run `npm start` to start the project.
+
  
 These are the HTTP response codes used in this project:
 | Status Codes | Indication                                                                                            |
@@ -23,5 +25,7 @@ These are the HTTP response codes used in this project:
 |  `401`       | This `Unauthorized error` status code indicates that the user has no access to the resource.        |
 |  `404`       | This `not found error` status code indicates that the resource is not found.        |
 |  `500`       | This `internal server error` status code indicates that something has gone wrong on the web server           |
+
+
 
 <hr>
